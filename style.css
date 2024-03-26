@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --bodycolor: #EEF1FC;
+    --cardcolor: #FFFFFF;
+    --buttonbg: #597FE2;
+    --footer: #E2E7FA;
+    --menuop: #13274F;
+    --text: #000000;
+    --fuente: 'Montserrat', sans-serif;
+}
+
+body{
+    background-image: url(img/vector1.png), url(img/vector2.png);
+    background-position: top;
+    background-color: var(--bodycolor);
+    background-repeat: no-repeat;
+    font-family: var(--fuente);
+    max-width: 1600px;
+}
+header{
+    padding: 2em;
+}
+header h1{
+    font-size: 40px;
+    font-weight: bolder;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu a{
+    margin: 0 1em;
+    padding: .3em;
+    text-decoration: none;
+    color: var(--menuop);
+    position: relative;
+}
+.menu a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    background-color: transparent;
+}
+.menu a:hover::after{
+    background-color: #597FE2;
+    transition: 0.3s ease;
+}
+
+.menu-burger{
+    display: none;
+}
+
+.menu-burger #button{
+    display: none;
+}
+.menu-burger label{
+    cursor: pointer;
+}
+.menu-burger .options{
+    display: none;
+
+    background-color: var(--cardcolor);
+    border-radius: 20px;
+    padding: 1em;
+    text-align: center;
+
+    position: absolute;
+    right: 0;
+    width: 60%;
+}
+.options li{
+    list-style: none;
+    border-radius: 10px;
+    padding: 2em;
+}
+.options li a{
+    text-decoration: none;
+    padding: 1.5em;
+    color: var(--menuop);
+}
+.options li:hover{
+    background-color: #cccccc5e;
+}
+
+#button:checked + .options{
+    display: block;
+    animation: menuIn 0.3s;
+}
+
+@keyframes menuIn{
+    from{
+        opacity: 0;
+        transform: scale(0.2);
+        right: 0;
+        top: 0;
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+main{
+    margin: 1em 0;
+}
+
+main .info{
+    margin: 7em auto;
+    text-align: center;
+    width: 70%;
+}
+.info h1{
+    padding: 1em;
+    font-size: 35px;
+    font-weight: bolder;
+}
+.info p{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+main .cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    gap: 20px;
+    margin: 0 auto;
+}
+img{
+    width: 60px;
+    margin: 1em 0;
+}
+main .card-1,
+.card-2,
+.card-3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cardcolor);
+    border-radius: 10px;
+    padding: 2em;
+    width: 33%;
+    box-shadow: 0px 0px 10px 1px var(--footer);
+}
+
+.cards button{
+    background-color: var(--cardcolor);
+    color: #2c3d69a4;
+    border: none;
+    border: 3px solid #E2E7FA;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+    width: 60%;
+    font-family: var(--fuente);
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.cards span{
+    color: #2c3d69;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.card-2 button{
+    width: 70%;
+}
+.card-1:hover{
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px 1px #5980e260;
+    transition: 0.3s ease;
+}
+.card-1:hover button{
+    background-color: var(--buttonbg);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.card-2:hover{
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px 1px #5980e260;
+    transition: 0.3s ease;
+}
+.card-2:hover button{
+    background-color: var(--buttonbg);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.card-3:hover{
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px 1px #5980e260;
+    transition: 0.3s ease;
+}
+.card-3:hover button{
+    background-color: var(--buttonbg);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer{
+    margin-top: 8em;
+    padding: 2em;
+    background-color: var(--footer);
+}
+
+footer section{
+    display: flex;
+    gap: 20px;
+    margin: 2em 0;
+    text-align: start;
+}
+footer div{
+    padding: 1em;
+}
+footer h3{
+    color: #2c3d69;
+}
+
+footer .copy{
+    text-align: center;
+}
+
+@media screen and (max-width: 900px){
+    nav .menu{
+        display: none;
+    }
+    .menu-burger{
+        display: block;
+    }
+
+    .cards{
+        flex-direction: column;
+    }
+    main .card-1,
+    .card-2,
+    .card-3{
+        width: 90%;
+    }
+}
