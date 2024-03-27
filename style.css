@@ -33,6 +33,7 @@ header h1{
 nav{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .menu a{
@@ -66,6 +67,9 @@ nav{
 }
 .menu-burger label{
     cursor: pointer;
+}
+.menu-burger label img{
+    width: 100%;
 }
 .menu-burger .options{
     display: none;
@@ -247,7 +251,9 @@ footer .copy{
     .menu-burger{
         display: block;
     }
-
+    main .info{
+        width: 85%;
+    }
     .cards{
         flex-direction: column;
     }
